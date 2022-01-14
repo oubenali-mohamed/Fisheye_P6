@@ -62,3 +62,9 @@ h1 {
   font-weight: bold;
   margin-top: -20px;
 }
+span {
+  color: red;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 10px;
+}
