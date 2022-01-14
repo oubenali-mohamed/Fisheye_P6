@@ -1,9 +1,12 @@
-function displayModal() {
-    const modal = document.getElementById("contact_modal");
-	modal.style.display = "block";
-}
+const displayModal = document.getElementById('displayModal')
+const closeModal = document.getElementById('closeModal')
 
-function closeModal() {
-    const modal = document.getElementById("contact_modal");
-    modal.style.display = "none";
-}
+displayModal.addEventListener('click', function () {
+  const modal = document.getElementById('contact_modal')
+  modal.style.display = 'block'
+})
+
+closeModal.addEventListener('click', function () {
+  const modal = document.getElementById('contact_modal')
+  modal.style.display = 'none'
+})

@@ -1,11 +1,11 @@
+let url = 'data/photographers.json'
 async function getPhotographers() {
   // Penser à remplacer par les données récupérées dans le json
-  fetch('data/photographers.json')
+  fetch(url)
     .then((response) => {
       return response.json()
     })
     .then((data) => {
-      console.log(data.photographers)
       const photographersSection = document.querySelector(
         '.photographer_section',
       )
@@ -16,8 +16,6 @@ async function getPhotographers() {
         photographersSection.appendChild(userCardDOM)
       })
     })
-
-  // et bien retourner le tableau photographers seulement une fois
 }
 
 async function init() {

@@ -8,14 +8,21 @@ function photographerFactory(data) {
     const img = document.createElement('img')
     img.setAttribute('src', picture)
     const h2 = document.createElement('h2')
-    h2.textContent = name + '\n' + city + ' ' + country
+    h2.textContent = name
     const divText = document.createElement('div')
+    const h3 = document.createElement('h3')
+    h3.textContent = city + ' ' + country
     const text = document.createElement('p')
-    text.textContent = tagline + '\n ' + price + '€/jour'
+    text.textContent = tagline
+    const prix = document.createElement('p')
+    prix.textContent = price + '€/jour'
+    prix.className = 'prix'
     const lien = document.createElement('a')
     lien.appendChild(img)
     lien.setAttribute('href', `photographer.html?id=${id}`)
+    divText.appendChild(h3)
     divText.appendChild(text)
+    divText.appendChild(prix)
     article.appendChild(lien)
     article.appendChild(h2)
     article.appendChild(divText)
