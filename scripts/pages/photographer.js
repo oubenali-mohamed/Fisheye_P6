@@ -27,7 +27,7 @@ const spanNom = document.getElementById('spanNom')
 const spanEmail = document.getElementById('spanEmail')
 const spanMsg = document.getElementById('spanMsg')
 
-const msgValidation = document.getElementById('ok')
+const msgValidation = document.getElementById('formValid')
 
 fetch(url_Photographer)
   .then((response) => {
@@ -35,6 +35,21 @@ fetch(url_Photographer)
   })
   .then((data) => {
     console.log(data.photographers)
+    for (i = 0; i < data.photographers.length; i++) {
+      if (id == data.photographers[i].id) {
+        const profilHeader = document.getElementById('profil')
+        const photographer = data.photographers[i]
+        console.log(photographer)
+        const profil = document.createElement('div')
+        profil.innerHTML = `
+        <img src = "${data.portrait}">
+        <h1>${photographer.name}</h1> </br> 
+        <h2>${photographer.city} + ${photographer.country}</h2> </br>
+        <h3>${photographer.tagline}</h3>
+       `
+        profilHeader.appendChild(profil)
+      }
+    }
   })
 
 // validation du formulaire au clique sur le bouton submit
@@ -68,7 +83,6 @@ btnSubmit.addEventListener('click', function (e) {
   if (prenom.value && nom.value && email.value && message.value) {
     msgValidation.innerHTML = 'Votre message à bien été reçu'
     msgValidation.style.color = '#fff'
-    msgValidation.style.backgroundColor = 'green'
     msgValidation.style.fontSize = '3em'
   }
 })
@@ -95,5 +109,13 @@ email.addEventListener('change', function () {
     spanEmail.textContent = erreurEmail
   } else {
     spanEmail.style.display = 'none'
+  }
+})
+
+message.addEventListener('change', function () {
+  if (!message.value) {
+    spanMsg.textContent = erreurMsg
+  } else {
+    spanMsg.style.display = 'none'
   }
 })
