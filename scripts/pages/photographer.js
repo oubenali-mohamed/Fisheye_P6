@@ -37,17 +37,34 @@ fetch(url_Photographer)
     console.log(data.photographers)
     for (i = 0; i < data.photographers.length; i++) {
       if (id == data.photographers[i].id) {
-        const profilHeader = document.getElementById('profil')
         const photographer = data.photographers[i]
+        const profilHeader = document.getElementById('profil')
         console.log(photographer)
+        const imgProfil = document.createElement('div')
+        imgProfil.innerHTML = `<img class = "imgProfil" src = "assets/photographers/${photographer.portrait}">`
+        imgProfil.id = 'img_profil'
         const profil = document.createElement('div')
+        profil.id = 'nom_profil'
         profil.innerHTML = `
-        <img src = "${data.portrait}">
         <h1>${photographer.name}</h1> </br> 
         <h2>${photographer.city} + ${photographer.country}</h2> </br>
-        <h3>${photographer.tagline}</h3>
+        <p>${photographer.tagline}</p>
        `
         profilHeader.appendChild(profil)
+        profilHeader.appendChild(imgProfil)
+      }
+    }
+    for (i = 0; i < data.media.length; i++) {
+      if (id == data.media[i].photographerId) {
+        const media = data.media[i]
+        console.log(data.media[i])
+        const main = document.getElementById('main')
+        const media_photographe = document.createElement('div')
+        media_photographe.innerHTML = `
+        <img class="media_photographe" src = "assets/images/${media.image}">
+        <h3>${media.title}</h3>
+        <p class="likes">${media.likes}</p>`
+        main.appendChild(media_photographe)
       }
     }
   })

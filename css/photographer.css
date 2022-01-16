@@ -6,6 +6,9 @@
   background-color: #fafafa;
   height: 300px;
   margin: 0 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .contact_button {
@@ -19,6 +22,8 @@
   background-color: #901c1c;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: 35%;
+  margin-top: 100px;
 }
 
 .modal {
@@ -79,4 +84,17 @@ form textarea {
   width: 100%;
   border: none;
   border-radius: 5px;
+}
+
+#img_profil {
+  width: 30%;
+}
+.imgProfil {
+  width: 300px;
+  margin-left: 200px;
+  border-radius: 50%;
+  margin-top: 50px;
+}
+.media_photographe {
+  width: 250px;
 }
