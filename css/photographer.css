@@ -86,15 +86,23 @@ form textarea {
   border-radius: 5px;
 }
 
-#img_profil {
-  width: 30%;
-}
 .imgProfil {
-  width: 300px;
-  margin-left: 200px;
   border-radius: 50%;
   margin-top: 50px;
+  object-fit: cover;
+  margin-left: 300px;
 }
 .media_photographe {
   width: 250px;
+  object-fit: cover;
+  margin-top: 100px;
+}
+#profil {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+#nom_profil {
+  margin-top: -300px;
+  margin-left: 150px;
 }
