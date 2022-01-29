@@ -9,7 +9,7 @@ function mediaFactory(data) {
     imgMedia.classList = "media_photographe";
     imgMedia.setAttribute("src", pictureMedia);
     const linkMedia = document.createElement("a");
-    linkMedia.setAttribute("href");
+    //linkMedia.setAttribute("href", "index.html");
     linkMedia.appendChild(imgMedia);
     const paraMedia = document.createElement("p");
     paraMedia.textContent = title;

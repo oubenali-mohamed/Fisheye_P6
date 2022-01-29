@@ -21,7 +21,7 @@ fetch(url_Photographer)
         profil.id = "nom_profil";
         profil.innerHTML = `
         <h1>${photographer.name}</h1> </br> 
-        <h2>${photographer.city} + ${photographer.country}</h2> </br>
+        <h2>${photographer.city}  ${photographer.country}</h2> </br>
         <p>${photographer.tagline}</p>
        `;
         profilHeader.after(profil);
