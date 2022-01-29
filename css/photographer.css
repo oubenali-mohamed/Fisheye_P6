@@ -92,11 +92,6 @@ form textarea {
   object-fit: cover;
   margin-left: 300px;
 }
-.media_photographe {
-  width: 250px;
-  object-fit: cover;
-  margin-top: 100px;
-}
 #profil {
   display: flex;
   flex-direction: row;
@@ -105,4 +100,33 @@ form textarea {
 #nom_profil {
   margin-top: -300px;
   margin-left: 150px;
+}
+#photographeMedia {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.media_photographe {
+  width: 250px;
+  height: 40%;
+  object-fit: cover;
+}
+#photographeMedia > div {
+  width: 20%;
+  margin-bottom: -180px;
+  margin-left: 10px;
+}
+#trier {
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+.trier {
+  margin-left: 50px;
+}
+.fas {
+  margin-left: 10px;
+}
+.like {
+  margin-left: 200px;
 }
