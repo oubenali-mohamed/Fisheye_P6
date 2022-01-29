@@ -12,6 +12,7 @@ function mediaFactory(data) {
     linkMedia.setAttribute("href", "index.html");
     linkMedia.appendChild(imgMedia);
     const paraMedia = document.createElement("p");
+    paraMedia.classList = "titreMedia";
     paraMedia.textContent = title;
     const pLike = document.createElement("p");
     pLike.classList = "like";
