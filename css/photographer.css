@@ -139,7 +139,16 @@ form textarea {
 .titreMedia {
   font-size: 14px;
 }
-.like {
-  margin-left: 200px;
-  margin-top: -32px;
+#mediaLike {
+  margin-left: 150px;
+  margin-top: -30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#mediaLike > i {
+  margin-top: 17px;
+  cursor: pointer;
+  color: #db8876;
+  margin-left: -40px;
 }

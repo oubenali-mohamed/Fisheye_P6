@@ -28,8 +28,19 @@ fetch(url_Photographer)
         profilHeader.appendChild(imgProfil);
       }
     }
-
     for (i = 0; i < data.media.length; i++) {
+      if (id == data.media[i].photographerId) {
+        const media = data.media[i];
+        console.log(media);
+        const mediaContent = document.getElementById("photographeMedia");
+        const mediaModel = new images(media);
+        const mediaCardDom = mediaModel.getImageCardDOM();
+        console.log(mediaCardDom);
+        mediaContent.appendChild(mediaCardDom);
+      }
+    }
+
+    /* for (i = 0; i < data.media.length; i++) {
       if (id == data.media[i].photographerId) {
         const media = data.media[i];
         const photographeMedia = document.getElementById("photographeMedia");
@@ -37,19 +48,6 @@ fetch(url_Photographer)
         const mediaCardDOM = mediaModel.getMedia();
         console.log(mediaCardDOM);
         photographeMedia.appendChild(mediaCardDOM);
-      }
-    }
-    /*  for (i = 0; i < data.media.length; i++) {
-      if (id == data.media[i].photographerId) {
-        const media = data.media[i]
-        console.log(data.media[i])
-        const main = document.getElementById('main')
-        const media_photographe = document.createElement('div')
-        media_photographe.innerHTML = `
-        <img class="media_photographe" src = "assets/images/${media.image}">
-        <h3>${media.title}</h3>
-        <p class="likes">${media.likes}</p>`
-        main.appendChild(media_photographe)
       }
     } */
   });
