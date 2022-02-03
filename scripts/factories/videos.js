@@ -6,7 +6,7 @@ class videos {
     this.price = data.price;
     this.date = data.date;
   }
-  getImageCardDOM() {
+  getVideoCardDOM() {
     const divVideoContent = document.createElement("div");
 
     const video = `assets/images/${this.video}`;
@@ -15,7 +15,7 @@ class videos {
 
     const videoContent = document.createElement("video");
     const sourceVideo = document.createElement("source");
-    videoContent.appendChild(iconPlay);
+    videoContent.appendChild(sourceVideo);
     sourceVideo.setAttribute("src", video);
     sourceVideo.setAttribute("type", "video/mp4");
     videoContent.appendChild(sourceVideo);

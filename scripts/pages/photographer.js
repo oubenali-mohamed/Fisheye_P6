@@ -39,15 +39,4 @@ fetch(url_Photographer)
         mediaContent.appendChild(mediaCardDom);
       }
     }
-
-    /* for (i = 0; i < data.media.length; i++) {
-      if (id == data.media[i].photographerId) {
-        const media = data.media[i];
-        const photographeMedia = document.getElementById("photographeMedia");
-        const mediaModel = mediaFactory(media);
-        const mediaCardDOM = mediaModel.getMedia();
-        console.log(mediaCardDOM);
-        photographeMedia.appendChild(mediaCardDOM);
-      }
-    } */
   });

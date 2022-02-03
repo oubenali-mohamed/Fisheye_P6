@@ -137,7 +137,8 @@ form textarea {
   margin-left: 10px;
 }
 .titreMedia {
-  font-size: 14px;
+  font-size: 16px;
+  color: #db8876;
 }
 #mediaLike {
   margin-left: 150px;
@@ -145,10 +146,10 @@ form textarea {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  color: #db8876;
 }
 #mediaLike > i {
-  margin-top: 17px;
+  margin-top: 19px;
   cursor: pointer;
-  color: #db8876;
-  margin-left: -40px;
+  margin-left: -70px;
 }

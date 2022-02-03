@@ -30,7 +30,7 @@ class images {
 
     const titleMedia = document.createElement("div");
     const h3 = document.createElement("h3");
-    // h3.className = "titreMedia";
+    h3.className = "titreMedia";
     h3.textContent = this.title;
     titleMedia.appendChild(h3);
     divImgContent.appendChild(titleMedia);
