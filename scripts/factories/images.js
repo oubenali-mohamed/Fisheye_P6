@@ -6,15 +6,7 @@ class images {
     this.price = data.price;
     this.date = data.date;
   }
-  /*  get title() {
-    return this.title;
-  }
-  get likes() {
-    return this.likes;
-  }
-  get image() {
-    return `assets/images/${this.image}`;
-  } */
+
   getImageCardDOM() {
     const divImgContent = document.createElement("div");
 

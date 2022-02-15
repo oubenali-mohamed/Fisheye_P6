@@ -37,6 +37,14 @@ fetch(url_Photographer)
         const mediaCardDom = mediaModel.getImageCardDOM();
         console.log(mediaCardDom);
         mediaContent.appendChild(mediaCardDom);
+      } else {
+        const video = data.media[i].video;
+        console.log(video);
+        /* const mediaContent = document.getElementById("photographeMedia");
+        const videoModel = new videos(video);
+        const videoCardDom = videoModel.getVideoCardDOM();
+        console.log(videoCardDom);
+        mediaContent.appendChild(videoCardDom); */
       }
     }
   });

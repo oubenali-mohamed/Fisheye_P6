@@ -29,11 +29,11 @@ class videos {
     divVideoContent.appendChild(titleVideo);
 
     const likeVideo = document.createElement("div");
-    const span = document.createElement("span");
+    const allLikes = document.createElement("p");
     const iconHeart = document.createElement("i");
-    span.textContent = this.likes;
+    allLikes.textContent = this.likes;
     iconHeart.className = "fas fa-heart";
-    likeVideo.appendChild(span);
+    likeVideo.appendChild(allLikes);
     likeVideo.appendChild(iconHeart);
 
     divVideoContent.appendChild(likeVideo);
