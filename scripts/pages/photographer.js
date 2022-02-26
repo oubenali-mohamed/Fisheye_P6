@@ -32,19 +32,21 @@ fetch(url_Photographer)
       if (id == data.media[i].photographerId) {
         const media = data.media[i];
         console.log(media);
-        const mediaContent = document.getElementById("photographeMedia");
-        const mediaModel = new images(media);
-        const mediaCardDom = mediaModel.getImageCardDOM();
-        console.log(mediaCardDom);
-        mediaContent.appendChild(mediaCardDom);
-      } else {
-        const video = data.media[i].video;
-        console.log(video);
-        /* const mediaContent = document.getElementById("photographeMedia");
-        const videoModel = new videos(video);
-        const videoCardDom = videoModel.getVideoCardDOM();
-        console.log(videoCardDom);
-        mediaContent.appendChild(videoCardDom); */
+        if (media.image) {
+          let type = "image";
+          const mediaContent = document.getElementById("photographeMedia");
+          const mediaModel = new mediaFactory(media, type);
+          const mediaCardDom = mediaModel.getImageCardDOM();
+          console.log(mediaCardDom);
+          mediaContent.appendChild(mediaCardDom);
+        } else {
+          let type = "video";
+          const mediaContent = document.getElementById("photographeMedia");
+          const videoModel = new mediaFactory(media, type);
+          const videoCardDom = videoModel.getVideoCardDOM();
+          console.log(videoCardDom);
+          mediaContent.appendChild(videoCardDom);
+        }
       }
     }
   });
