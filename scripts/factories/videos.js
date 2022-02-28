@@ -14,6 +14,11 @@ class videos {
     const linkVideo = document.createElement("a");
     linkVideo.setAttribute("href", video);
 
+    const play = document.createElement("i");
+    play.className = "fas fa-play-circle";
+    play.id = "play";
+    linkVideo.appendChild(play);
+
     const videoContent = document.createElement("video");
     videoContent.className = "media_photographe";
     const sourceVideo = document.createElement("source");
