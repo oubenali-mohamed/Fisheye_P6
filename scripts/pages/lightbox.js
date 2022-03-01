@@ -10,6 +10,8 @@ window.onload = () => {
 
       const image = document.querySelector(".lightbox_container img");
       image.src = this.href;
+      const video = document.querySelector(".lightbox_container video");
+      video.src = this.href;
       lightbox.style.display = "block";
     });
   }
