@@ -3,7 +3,7 @@
  * @property {string[]} images  chemins des images de la lightbox
  * @property {string} url image actuellement affichée
  */
-class lightbox {
+/* class lightbox {
   static init() {
     const links = Array.from(
       document.querySelectorAll(
@@ -17,26 +17,26 @@ class lightbox {
         new lightbox(e.currentTarget.getAttribute("href"), gallery);
       })
     );
-  }
-  /**
-   *@param {string} url url de l'image
-   *@param {string[]} images chemins des images de la lightbox
-   */
+  } */
+/**
+ *@param {string} url url de l'image
+ *@param {string[]} images chemins des images de la lightbox
+ */
 
-  constructor(url, images) {
+/* constructor(url, images) {
     this.element = this.buildDOM(url);
     this.images = images;
     this.loadImage(url);
     this.onKeyUp = this.onKeyUp.bind(this);
     document.body.appendChild(this.element);
     document.addEventListener("Keyup", this.onKeyUp);
-  }
+  } */
 
-  /**
-   *
-   *@param {string} url url de l'image
-   */
-  loadImage(url) {
+/**
+ *
+ *@param {string} url url de l'image
+ */
+/* loadImage(url) {
     this.url = null;
     const image = new Image();
     const container = this.element.querySelector(".lightbox_container");
@@ -50,12 +50,12 @@ class lightbox {
       this.url = url;
     };
     image.src = url;
-  }
-  /**
-   *
-   * @param {KeyBoardEvent} e
-   */
-  onKeyUp(e) {
+  } */
+/**
+ *
+ * @param {KeyBoardEvent} e
+ */
+/* onKeyUp(e) {
     if (e.key === "Escap") {
       this.close(e);
     } else if (e.key === "ArrowRight") {
@@ -63,50 +63,50 @@ class lightbox {
     } else if (e.key === "ArrowLeft") {
       this.prev(e);
     }
-  }
+  } */
 
-  /**
-   * ferme la lightbox
-   * @param {mouseEvent/keyBoardEvent} e
-   */
-  close(e) {
+/**
+ * ferme la lightbox
+ * @param {mouseEvent/keyBoardEvent} e
+ */
+/* close(e) {
     e.preventDefault();
     this.element.classList.add("fadeOut");
     window.setTimeout(() => {
       this.element.parentElement.removeChild(this.element);
     }, 500);
     document.removeEventListener("Keyup", this.onKeyUp);
-  }
+  } */
 
-  /**
-   * @param {mouseEvent/keyBoardEvent} e
-   */
-  next(e) {
+/**
+ * @param {mouseEvent/keyBoardEvent} e
+ */
+/* next(e) {
     e.preventDefault();
     let i = this.images.findIndex((image) => image === this.url);
     if (i === this.images.length - 1) {
       i = -1;
     }
     this.loadImage(this.images[i + 1]);
-  }
+  } */
 
-  /**
-   * @param {mouseEvent/keyBoardEvent} e
-   */
-  prev(e) {
+/**
+ * @param {mouseEvent/keyBoardEvent} e
+ */
+/*  prev(e) {
     e.preventDefault();
     let i = this.images.findIndex((image) => image === this.url);
     if (i === 0) {
       i = this.images.length;
     }
     this.loadImage(this.images[i - 1]);
-  }
+  } */
 
-  /**
-   *@param {string} url url de l'image
-   *@return {HTMLElement}
-   */
-  buildDOM(url) {
+/**
+ *@param {string} url url de l'image
+ *@return {HTMLElement}
+ */
+/* buildDOM(url) {
     const dom = document.createElement("div");
     dom.classList.add("lightbox");
     dom.innerHTML = ` 
@@ -134,3 +134,4 @@ class lightbox {
 }
 
 lightbox.init();
+  */
