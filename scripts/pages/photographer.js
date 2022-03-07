@@ -23,14 +23,23 @@ fetch(url_Photographer)
         <h1>${photographer.name}</h1> </br> 
         <h2>${photographer.city}  ${photographer.country}</h2> </br>
         <p>${photographer.tagline}</p>
-       `;
+        `;
         profilHeader.after(profil);
         profilHeader.appendChild(imgProfil);
+        /* const prix_jour = document.getElementById("total_like_price");
+        prix_jour.textContent = `${photographer.price}€/jour`;
+        const photographeMedia = document.getElementById("photographeMedia");
+        photographeMedia.appendChild(prix_jour); */
       }
     }
     for (i = 0; i < data.media.length; i++) {
       if (id == data.media[i].photographerId) {
         const media = data.media[i];
+        /* const like_all_media = document.getElementById("total_like_price");
+        like_all_media.innerHTML += `${media.likes}`;
+        const photographeMedia = document.getElementById("photographeMedia");
+        photographeMedia.appendChild(like_all_media); */
+
         console.log(media);
         if (media.image) {
           let type = "image";
@@ -49,4 +58,11 @@ fetch(url_Photographer)
         }
       }
     }
+
+    /* const like_media = document.getElementById("like_media");
+    like_media.addEventListener("click", function (e) {
+      e.preventDefault();
+      let total_like = document.getElementById("total_like");
+      total_like++;
+    }); */
   });

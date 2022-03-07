@@ -33,7 +33,9 @@
   margin-left: 35%;
   margin-top: 100px;
 }
-
+.contact_button:hover {
+  background-color: #db8876;
+}
 .modal {
   border-radius: 5px;
   background-color: #db8876;
@@ -129,6 +131,12 @@ form textarea {
 #trier {
   margin-top: 100px;
   margin-bottom: 60px;
+  margin-left: 25px;
+  font-size: 25px;
+  padding: 5px;
+  background-color: #901c1c;
+  color: #fff;
+  border: none;
 }
 .trier {
   margin-left: 50px;
@@ -159,4 +167,7 @@ form textarea {
   margin-left: 100px;
   font-size: 40px;
   color: #fff;
+}
+#total_like_price {
+  background-color: red;
 }

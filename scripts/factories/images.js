@@ -31,7 +31,9 @@ class images {
     likeMedia.id = "mediaLike";
     const totalLike = document.createElement("p");
     const iconHeart = document.createElement("i");
+    iconHeart.id = "like_media";
     totalLike.textContent = this.likes;
+    totalLike.id = "total_like";
     iconHeart.className = "fas fa-heart";
     likeMedia.appendChild(totalLike);
     likeMedia.appendChild(iconHeart);
