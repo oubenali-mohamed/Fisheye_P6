@@ -10,9 +10,7 @@
   overflow: auto;
   transition: opacity 0.3s;
 }
-.lightbox.fadeOut {
-  opacity: 0;
-}
+
 .lightbox_prev,
 .lightbox_next {
   background: url("assets/icons/next.svg") center center / 50px 50px no-repeat;
@@ -53,12 +51,12 @@
   opacity: 1;
 }
 .lightbox_container img {
-  width: 60%;
+  width: 90%;
   height: 600px;
   object-fit: cover;
 }
 .lightbox_container video {
-  width: 60%;
+  width: 90%;
   height: 600px;
   object-fit: cover;
 }
@@ -71,10 +69,4 @@
   width: 700px;
   height: 700px;
   background-color: #fff;
-}
-.lightbox_loader {
-  width: 38px;
-  height: 38px;
-  background: url("assets/icons/loader.svg") center center no-repeat;
-  opacity: 0.5;
 }

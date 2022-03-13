@@ -10,7 +10,7 @@ class images {
   getImageCardDOM() {
     const divImgContent = document.createElement("div");
 
-    const picture = `assets/images/${this.image}`;
+    const picture = `/assets/images/${this.image}`;
     const linkPicture = document.createElement("a");
     linkPicture.setAttribute("href", picture);
 
@@ -31,10 +31,10 @@ class images {
     likeMedia.id = "mediaLike";
     const totalLike = document.createElement("p");
     const iconHeart = document.createElement("i");
-    iconHeart.id = "like_media";
-    totalLike.textContent = this.likes;
-    totalLike.id = "total_like";
     iconHeart.className = "fas fa-heart";
+    totalLike.textContent = this.likes;
+    totalLike.className = "total_like";
+
     likeMedia.appendChild(totalLike);
     likeMedia.appendChild(iconHeart);
 

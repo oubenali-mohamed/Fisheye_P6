@@ -1,6 +1,5 @@
 class videos {
   constructor(data) {
-    console.log(data);
     this.title = data.title;
     this.likes = data.likes;
     this.video = data.video;
@@ -41,6 +40,7 @@ class videos {
     const allLikes = document.createElement("p");
     const iconHeart = document.createElement("i");
     allLikes.textContent = this.likes;
+    allLikes.className = "total_like";
     iconHeart.className = "fas fa-heart";
     likeVideo.appendChild(allLikes);
     likeVideo.appendChild(iconHeart);
