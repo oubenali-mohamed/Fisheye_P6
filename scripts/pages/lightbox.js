@@ -1,18 +1,22 @@
-window.onload = () => {
+/* window.onload = () => {
   const lightbox = document.querySelector("#lightbox");
   const links = document.querySelectorAll("a");
   const close = document.querySelector(".lightbox_close");
   const next = document.querySelector(".lightbox_next");
   const prev = document.querySelector(".lightbox_prev");
   const container_img = document.querySelector(".lightbox_container");
+  let index = 0;
   console.log(links);
 
-  function setImage() {
+  //function setImage() {
+
+  //}
+  for (i = 0; i < links.length; i++) {
+    //setImage();
     const link = links[i];
     if (link.firstChild.nodeName === "IMG") {
       link.addEventListener("click", function (e) {
         e.preventDefault();
-        //console.log(i);
         lightbox.style.display = "block";
         const image = link.innerHTML;
         container_img.innerHTML = image;
@@ -40,10 +44,7 @@ window.onload = () => {
       }
     }
   }
-  for (i = 0; i < links.length; i++) {
-    setImage();
-  }
-  let index = 0;
+
   next.addEventListener("click", function (e) {
     e.preventDefault();
     console.log(index);
@@ -51,7 +52,8 @@ window.onload = () => {
       index = -1;
     }
     index++;
-    //return setImage();
+
+    //setImage();
   });
 
   prev.addEventListener("click", function (e) {
@@ -61,10 +63,41 @@ window.onload = () => {
       index = links.length;
     }
     index--;
-    //return setImage();
+    //setImage();
   });
+
   close.addEventListener("click", function (e) {
     e.preventDefault();
     lightbox.style.display = "none";
   });
-};
+}; */
+
+class Lightbox {
+  constructor() {
+    this.listMedias = [];
+    this.index = 0;
+  }
+  close() {
+    const lightbox = document.querySelector("#lightbox");
+    const close = document.querySelector(".lightbox_close");
+    close.addEventListener("click", function (e) {
+      e.preventDefault();
+      lightbox.style.display = "none";
+    });
+  }
+  next() {
+    const next = document.querySelector(".lightbox_next");
+    next.addEventListener("click", () => {
+      if (this.index >= this.listMedias.length - 1) {
+        this.index = -1;
+      }
+      this.index++;
+    });
+  }
+  prev() {
+    if (this.index <= 0) {
+      this.index = this.listMedias.length;
+    }
+    this.index--;
+  }
+}

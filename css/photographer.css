@@ -168,3 +168,6 @@ form textarea {
   font-size: 40px;
   color: #fff;
 }
+a {
+  cursor: pointer;
+}
