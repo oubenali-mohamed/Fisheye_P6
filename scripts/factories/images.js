@@ -12,7 +12,6 @@ class images {
 
     const picture = `/assets/images/${this.image}`;
     const linkPicture = document.createElement("a");
-    //linkPicture.className = "one_media";
 
     const img = document.createElement("img");
     img.setAttribute("src", picture);

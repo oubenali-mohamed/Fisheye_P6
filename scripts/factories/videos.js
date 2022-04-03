@@ -11,7 +11,6 @@ class videos {
 
     const video = `assets/images/${this.video}`;
     const linkVideo = document.createElement("a");
-    //linkVideo.classList = "one_media";
 
     const play = document.createElement("i");
     play.className = "fas fa-play-circle";
