@@ -12,7 +12,7 @@ class images {
 
     const picture = `/assets/images/${this.image}`;
     const linkPicture = document.createElement("a");
-    // linkPicture.setAttribute("href", picture);
+    //linkPicture.className = "one_media";
 
     const img = document.createElement("img");
     img.setAttribute("src", picture);
@@ -34,11 +34,7 @@ class images {
     iconHeart.className = "fas fa-heart";
     totalLike.textContent = this.likes;
     totalLike.className = "total_like";
-    iconHeart.addEventListener("click", function () {
-      let lk = parseInt(totalLike.innerHTML);
-      lk + 1;
-      console.log(lk);
-    });
+
     likeMedia.appendChild(totalLike);
     likeMedia.appendChild(iconHeart);
 

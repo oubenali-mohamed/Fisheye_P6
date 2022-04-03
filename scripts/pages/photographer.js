@@ -28,55 +28,37 @@ fetch(url_Photographer)
       }
     }
 
-    for (i = 0; i < data.media.length; i++) {
+    for (let i = 0; i < data.media.length; i++) {
       if (id == data.media[i].photographerId) {
         const media = data.media[i];
-        //console.log(media);
+        // console.log(media);
         lightbox.listMedias.push(media);
-        lightbox.close();
-        lightbox.next();
-        lightbox.prev();
-
-        if (media.image) {
-          let type = "image";
-          const mediaContent = document.getElementById("photographeMedia");
-          let mediaModel = new mediaFactory(media, type);
-          let mediaCardDom = mediaModel.getImageCardDOM();
-          mediaContent.appendChild(mediaCardDom);
-          mediaCardDom.addEventListener("click", function () {
-            const lightbox = document.querySelector("#lightbox");
-            const container_img = document.querySelector(".lightbox_container");
-            const photo = document.createElement("img");
-            photo.setAttribute("src", "/assets/images/" + mediaModel.image);
-            if (container_img.firstChild != null) {
-              container_img.removeChild(container_img.firstChild);
-            }
-            container_img.appendChild(photo);
-            lightbox.style.display = "block";
-          });
-        } else {
-          let type = "video";
-          const mediaContent = document.getElementById("photographeMedia");
-          let videoModel = new mediaFactory(media, type);
-
-          let videoCardDom = videoModel.getVideoCardDOM();
-          mediaContent.appendChild(videoCardDom);
-          videoCardDom.addEventListener("click", function () {
-            const lightbox = document.querySelector("#lightbox");
-            const container_img = document.querySelector(".lightbox_container");
-            const the_video = document.createElement("video");
-            const s_video = document.createElement("source");
-            s_video.setAttribute("src", "/assets/images/" + videoModel.video);
-            s_video.setAttribute("type", "video/mp4");
-            the_video.appendChild(s_video);
-            if (container_img.firstChild != null) {
-              container_img.removeChild(container_img.firstChild);
-            }
-            container_img.appendChild(the_video);
-            the_video.play();
-            lightbox.style.display = "block";
-          });
-        }
+      }
+    }
+    for (let i = 0; i < lightbox.listMedias.length; i++) {
+      const media = lightbox.listMedias[i];
+      if (media.image) {
+        let type = "image";
+        const mediaContent = document.getElementById("photographeMedia");
+        const mediaModel = new mediaFactory(media, type);
+        const mediaCardDom = mediaModel.getImageCardDOM();
+        mediaContent.appendChild(mediaCardDom);
+        mediaCardDom.addEventListener("click", function (e) {
+          e.preventDefault();
+          lightbox.play(i);
+          lightbox.displayMedia();
+        });
+      } else {
+        let type = "video";
+        const mediaContent = document.getElementById("photographeMedia");
+        const videoModel = new mediaFactory(media, type);
+        const videoCardDom = videoModel.getVideoCardDOM();
+        mediaContent.appendChild(videoCardDom);
+        videoCardDom.addEventListener("click", function (e) {
+          e.preventDefault();
+          lightbox.play(i);
+          lightbox.displayMedia();
+        });
       }
     }
   });
