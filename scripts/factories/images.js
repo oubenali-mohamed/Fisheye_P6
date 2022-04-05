@@ -33,7 +33,12 @@ class images {
     iconHeart.className = "fas fa-heart";
     totalLike.textContent = this.likes;
     totalLike.className = "total_like";
-
+    // console.log(typeof totalLike.innerHTML);
+    iconHeart.addEventListener("click", function (e) {
+      e.preventDefault();
+      const like_one_media = parseInt(totalLike.innerHTML++);
+      console.log(like_one_media);
+    });
     likeMedia.appendChild(totalLike);
     likeMedia.appendChild(iconHeart);
 

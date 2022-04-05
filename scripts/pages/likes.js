@@ -1,8 +1,8 @@
 /* window.addEventListener("load", function (e) {
   const heart_like = document.getElementsByClassName("fas fa-heart");
   let number_like = document.getElementsByClassName("total_like");
-  /* console.log(number_like);
-  console.log(heart_like); 
+  console.log(number_like);
+  console.log(heart_like);
 
   //boucle pour parcourir le tableau des icons heart
   for (i = 0; i < heart_like.length; i++) {
@@ -22,4 +22,5 @@
       }
     }
   }
-});*/
+});
+ */

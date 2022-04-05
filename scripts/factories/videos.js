@@ -41,6 +41,11 @@ class videos {
     allLikes.textContent = this.likes;
     allLikes.className = "total_like";
     iconHeart.className = "fas fa-heart";
+    iconHeart.addEventListener("click", function (e) {
+      e.preventDefault();
+      const like_one_media = parseInt(allLikes.innerHTML++);
+      console.log(like_one_media);
+    });
     likeVideo.appendChild(allLikes);
     likeVideo.appendChild(iconHeart);
 

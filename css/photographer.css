@@ -171,3 +171,9 @@ form textarea {
 a {
   cursor: pointer;
 }
+#titre_photo {
+  color: #901c1c;
+  margin-left: 50px;
+  margin-top: -30px;
+  font-size: 20px;
+}

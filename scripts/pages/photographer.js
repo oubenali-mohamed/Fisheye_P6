@@ -43,7 +43,7 @@ fetch(url_Photographer)
         const mediaModel = new mediaFactory(media, type);
         const mediaCardDom = mediaModel.getImageCardDOM();
         mediaContent.appendChild(mediaCardDom);
-        mediaCardDom.addEventListener("click", function (e) {
+        mediaCardDom.firstChild.addEventListener("click", function (e) {
           e.preventDefault();
           lightbox.play(i);
           lightbox.displayMedia();
@@ -54,7 +54,7 @@ fetch(url_Photographer)
         const videoModel = new mediaFactory(media, type);
         const videoCardDom = videoModel.getVideoCardDOM();
         mediaContent.appendChild(videoCardDom);
-        videoCardDom.addEventListener("click", function (e) {
+        videoCardDom.firstChild.addEventListener("click", function (e) {
           e.preventDefault();
           lightbox.play(i);
           lightbox.displayMedia();
