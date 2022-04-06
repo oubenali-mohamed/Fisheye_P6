@@ -36,8 +36,9 @@ class images {
     // console.log(typeof totalLike.innerHTML);
     iconHeart.addEventListener("click", function (e) {
       e.preventDefault();
-      const like_one_media = parseInt(totalLike.innerHTML++);
-      console.log(like_one_media);
+      parseInt(totalLike.innerHTML++);
+      let increment_total_like = document.getElementById("tout_les_likes");
+      parseInt(increment_total_like.innerHTML++);
     });
     likeMedia.appendChild(totalLike);
     likeMedia.appendChild(iconHeart);

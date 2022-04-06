@@ -43,8 +43,9 @@ class videos {
     iconHeart.className = "fas fa-heart";
     iconHeart.addEventListener("click", function (e) {
       e.preventDefault();
-      const like_one_media = parseInt(allLikes.innerHTML++);
-      console.log(like_one_media);
+      parseInt(allLikes.innerHTML++);
+      let increment_total_like = document.getElementById("tout_les_likes");
+      parseInt(increment_total_like.innerHTML++);
     });
     likeVideo.appendChild(allLikes);
     likeVideo.appendChild(iconHeart);

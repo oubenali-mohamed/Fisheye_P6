@@ -177,3 +177,18 @@ a {
   margin-top: -30px;
   font-size: 20px;
 }
+#all_Media_Like {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #db8876;
+  height: 50px;
+  width: 200px;
+  margin-left: 80%;
+}
+#tout_les_likes {
+  margin-left: 15px;
+  font-size: 20px;
+
+  font-weight: bold;
+}

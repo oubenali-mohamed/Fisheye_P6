@@ -4,6 +4,7 @@ let searchParams = new URLSearchParams(urlPhotographer);
 let id = searchParams.get("id");
 let url_Photographer = "data/photographers.json";
 let lightbox = new Lightbox();
+let likeArray = [];
 
 fetch(url_Photographer)
   .then((response) => {
@@ -23,6 +24,7 @@ fetch(url_Photographer)
         <h2>${photographer.city}  ${photographer.country}</h2> </br>
         <p>${photographer.tagline}</p>
         `;
+
         profilHeader.after(profil);
         profilHeader.appendChild(imgProfil);
       }
@@ -33,8 +35,19 @@ fetch(url_Photographer)
         const media = data.media[i];
         // console.log(media);
         lightbox.listMedias.push(media);
+        const likeMedia = media.likes;
+        likeArray.push(likeMedia);
+        // console.log(likeArray);
       }
     }
+
+    const sommeMediaLike = likeArray.reduce(
+      (previousValue, currentValue) => previousValue + currentValue
+    );
+
+    const all_media_like = document.getElementById("tout_les_likes");
+    all_media_like.innerHTML = sommeMediaLike;
+
     for (let i = 0; i < lightbox.listMedias.length; i++) {
       const media = lightbox.listMedias[i];
       if (media.image) {
