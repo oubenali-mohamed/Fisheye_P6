@@ -5,6 +5,7 @@ class images {
     this.image = data.image;
     this.price = data.price;
     this.date = data.date;
+    this.liked = false;
   }
 
   getImageCardDOM() {
@@ -33,12 +34,17 @@ class images {
     iconHeart.className = "fas fa-heart";
     totalLike.textContent = this.likes;
     totalLike.className = "total_like";
-    // console.log(typeof totalLike.innerHTML);
     iconHeart.addEventListener("click", function (e) {
       e.preventDefault();
-      parseInt(totalLike.innerHTML++);
       let increment_total_like = document.getElementById("tout_les_likes");
-      parseInt(increment_total_like.innerHTML++);
+      if (this.liked) {
+        parseInt(totalLike.innerHTML--);
+        parseInt(increment_total_like.innerHTML--);
+      } else {
+        parseInt(totalLike.innerHTML++);
+        parseInt(increment_total_like.innerHTML++);
+      }
+      this.liked = !this.liked;
     });
     likeMedia.appendChild(totalLike);
     likeMedia.appendChild(iconHeart);

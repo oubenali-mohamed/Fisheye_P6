@@ -11,6 +11,7 @@ fetch(url_Photographer)
     return response.json();
   })
   .then((data) => {
+    //récupération des données de chaque photographe
     for (i = 0; i < data.photographers.length; i++) {
       if (id == data.photographers[i].id) {
         const photographer = data.photographers[i];
@@ -30,24 +31,74 @@ fetch(url_Photographer)
       }
     }
 
+    // récupération de chaque media du photographe
     for (let i = 0; i < data.media.length; i++) {
       if (id == data.media[i].photographerId) {
         const media = data.media[i];
-        // console.log(media);
         lightbox.listMedias.push(media);
         const likeMedia = media.likes;
         likeArray.push(likeMedia);
-        // console.log(likeArray);
       }
     }
+    //trie des medias
+    const trier = document.querySelector("select");
+    trier.addEventListener("change", function (e) {
+      e.preventDefault();
+      const mediaContent = document.getElementById("photographeMedia");
+      while (mediaContent.hasChildNodes()) {
+        mediaContent.removeChild(mediaContent.firstChild);
+      }
+      const trie = trier.options;
+      if (trie.selectedIndex == 0) {
+        lightbox.listMedias.sort((a, b) => {
+          return b.likes - a.likes;
+        });
+      } else if (trie.selectedIndex == 1) {
+        lightbox.listMedias.sort((a, b) => {
+          return new Date(b.date) - new Date(a.date);
+        });
+      } else if (trie.selectedIndex == 2) {
+        lightbox.listMedias.sort((a, b) => {
+          return a.title.localeCompare(b.title);
+        });
+      }
+      console.log(lightbox.listMedias);
+      for (let i = 0; i < lightbox.listMedias.length; i++) {
+        const media = lightbox.listMedias[i];
+        if (media.image) {
+          let type = "image";
+          const mediaContent = document.getElementById("photographeMedia");
+          const mediaModel = new mediaFactory(media, type);
+          const mediaCardDom = mediaModel.getImageCardDOM();
+          mediaContent.appendChild(mediaCardDom);
+          mediaCardDom.firstChild.addEventListener("click", function (e) {
+            e.preventDefault();
+            lightbox.play(i);
+            lightbox.displayMedia();
+          });
+        } else {
+          let type = "video";
+          const mediaContent = document.getElementById("photographeMedia");
+          const videoModel = new mediaFactory(media, type);
+          const videoCardDom = videoModel.getVideoCardDOM();
+          mediaContent.appendChild(videoCardDom);
+          videoCardDom.firstChild.addEventListener("click", function (e) {
+            e.preventDefault();
+            lightbox.play(i);
+            lightbox.displayMedia();
+          });
+        }
+      }
+    });
 
+    //utilisation de la méthode reduce pour additionner la somme des likes
     const sommeMediaLike = likeArray.reduce(
       (previousValue, currentValue) => previousValue + currentValue
     );
-
     const all_media_like = document.getElementById("tout_les_likes");
     all_media_like.innerHTML = sommeMediaLike;
 
+    // boucle permettant d'afficher les différents medias dans le dom ensuite dans la lightbox
     for (let i = 0; i < lightbox.listMedias.length; i++) {
       const media = lightbox.listMedias[i];
       if (media.image) {

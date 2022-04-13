@@ -5,6 +5,7 @@ class videos {
     this.video = data.video;
     this.price = data.price;
     this.date = data.date;
+    this.liked = false;
   }
   getVideoCardDOM() {
     const divVideoContent = document.createElement("div");
@@ -43,9 +44,15 @@ class videos {
     iconHeart.className = "fas fa-heart";
     iconHeart.addEventListener("click", function (e) {
       e.preventDefault();
-      parseInt(allLikes.innerHTML++);
       let increment_total_like = document.getElementById("tout_les_likes");
-      parseInt(increment_total_like.innerHTML++);
+      if (this.liked) {
+        parseInt(allLikes.innerHTML--);
+        parseInt(increment_total_like.innerHTML--);
+      } else {
+        parseInt(allLikes.innerHTML++);
+        parseInt(increment_total_like.innerHTML++);
+      }
+      this.liked = !this.liked;
     });
     likeVideo.appendChild(allLikes);
     likeVideo.appendChild(iconHeart);
