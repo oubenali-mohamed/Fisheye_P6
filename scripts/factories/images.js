@@ -11,7 +11,7 @@ class images {
   getImageCardDOM() {
     const divImgContent = document.createElement("div");
 
-    const picture = `/assets/images/${this.image}`;
+    const picture = `assets/images/${this.image}`;
     const linkPicture = document.createElement("a");
 
     const img = document.createElement("img");
