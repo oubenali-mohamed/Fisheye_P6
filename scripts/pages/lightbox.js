@@ -74,7 +74,6 @@ class Lightbox {
       this.index = -1;
     } else {
       this.index++;
-      console.log(this.index);
     }
     this.displayMedia();
   }
@@ -83,7 +82,6 @@ class Lightbox {
       this.index = this.listMedias.length;
     } else {
       this.index--;
-      console.log(this.index);
     }
     this.displayMedia();
   }
