@@ -57,7 +57,6 @@ fetch(url_Photographer)
         <p>${photographer.tagline}</p>
         `;
         pricePhotographe = photographer.price;
-        console.log(pricePhotographe);
         profilHeader.after(profil);
         profilHeader.appendChild(imgProfil);
       }
