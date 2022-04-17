@@ -38,7 +38,7 @@ class Lightbox {
       const container_img = document.querySelector(".lightbox_container");
       const the_video = document.createElement("video");
       const s_video = document.createElement("source");
-      s_video.setAttribute("src", "/assets/images/" + video);
+      s_video.setAttribute("src", "assets/images/" + video);
       s_video.setAttribute("type", "video/mp4");
       the_video.appendChild(s_video);
       let the_title = this.listMedias[this.index].title;
