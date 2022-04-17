@@ -48,7 +48,7 @@ fetch(url_Photographer)
         const photographer = data.photographers[i];
         const profilHeader = document.getElementById("profil");
         const imgProfil = document.createElement("div");
-        imgProfil.innerHTML = `<img class = "imgProfil" src = "/assets/photographers/${photographer.portrait}">`;
+        imgProfil.innerHTML = `<img class = "imgProfil" src = "assets/photographers/${photographer.portrait}">`;
         const profil = document.createElement("div");
         profil.id = "nom_profil";
         profil.innerHTML = `
