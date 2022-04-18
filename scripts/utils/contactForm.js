@@ -44,7 +44,6 @@ closeModal.addEventListener("click", function () {
   displayModal.focus();
 });
 document.addEventListener("keyup", function (e) {
-  console.log(e.key);
   if (e.key == "Escape") {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";

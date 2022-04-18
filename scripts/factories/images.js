@@ -17,7 +17,7 @@ class images {
     const img = document.createElement("img");
     img.setAttribute("src", picture);
     img.className = "media_photographe";
-    img.setAttribute("alt", "media du photographe");
+    img.setAttribute("alt", this.title);
     linkPicture.appendChild(img);
     divImgContent.appendChild(linkPicture);
 

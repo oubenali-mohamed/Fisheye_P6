@@ -197,3 +197,47 @@ legend {
   font-size: 25px;
   font-weight: bold;
 }
+
+@media all and (max-device-width: 480px) {
+  #main {
+    width: auto;
+    height: auto;
+  }
+  #profil {
+    width: auto;
+  }
+  #displayModal {
+    margin-left: 30%;
+  }
+  .imgProfil {
+    margin-left: -30px;
+  }
+  #photographeMedia {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #photographeMedia > div {
+    margin: auto;
+    width: 100%;
+    height: 500px;
+  }
+  .media_photographe {
+    width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .titreMedia {
+    font-size: 50px;
+    margin-left: 40px;
+  }
+  #mediaLike {
+    font-size: 30px;
+    margin-top: -70px;
+    margin-left: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
