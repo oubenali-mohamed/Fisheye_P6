@@ -17,6 +17,7 @@ class images {
     const img = document.createElement("img");
     img.setAttribute("src", picture);
     img.className = "media_photographe";
+    img.setAttribute("alt", "media du photographe");
     linkPicture.appendChild(img);
     divImgContent.appendChild(linkPicture);
 
@@ -32,6 +33,7 @@ class images {
     let totalLike = document.createElement("p");
     const iconHeart = document.createElement("i");
     iconHeart.className = "fas fa-heart";
+    iconHeart.setAttribute("title", "nombre de like du media");
     totalLike.textContent = this.likes;
     totalLike.className = "total_like";
     iconHeart.addEventListener("click", function (e) {

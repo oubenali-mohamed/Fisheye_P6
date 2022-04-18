@@ -15,6 +15,7 @@ class videos {
 
     const play = document.createElement("i");
     play.className = "fas fa-play-circle";
+    play.setAttribute("title", "icone lecture video");
     play.id = "play";
     linkVideo.appendChild(play);
 
@@ -42,6 +43,7 @@ class videos {
     allLikes.textContent = this.likes;
     allLikes.className = "total_like";
     iconHeart.className = "fas fa-heart";
+    iconHeart.setAttribute("title", "nombre de like du media");
     iconHeart.addEventListener("click", function (e) {
       e.preventDefault();
       let increment_total_like = document.getElementById("tout_les_likes");

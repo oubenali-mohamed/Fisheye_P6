@@ -27,13 +27,21 @@ const spanMsg = document.getElementById("spanMsg");
 const msgValidation = document.getElementById("formValid");
 
 displayModal.addEventListener("click", function () {
+  const main = document.getElementById("main");
   const modal = document.getElementById("contact_modal");
   modal.style.display = "block";
+  main.setAttribute("aria-hidden", "true");
+  modal.setAttribute("aria-hidden", "false");
+  closeModal.focus();
 });
 
 closeModal.addEventListener("click", function () {
+  const main = document.getElementById("main");
   const modal = document.getElementById("contact_modal");
   modal.style.display = "none";
+  main.setAttribute("aria-hidden", "false");
+  modal.setAttribute("aria-hidden", "true");
+  displayModal.focus();
 });
 document.addEventListener("keyup", function (e) {
   console.log(e.key);
