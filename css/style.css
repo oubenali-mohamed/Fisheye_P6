@@ -67,8 +67,6 @@ span {
   margin-top: 10px;
 }
 
-@media all and (min-width: 481px) and (max-width: 1200px) {
-}
 @media all and (max-device-width: 480px) {
   .photographer_section {
     display: flex;
