@@ -1,4 +1,4 @@
-class videos {
+class Videos {
   constructor(data) {
     this.title = data.title;
     this.likes = data.likes;

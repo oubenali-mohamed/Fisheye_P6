@@ -1,4 +1,4 @@
-class images {
+class Images {
   constructor(data) {
     this.title = data.title;
     this.likes = data.likes;

@@ -1,9 +1,9 @@
-class mediaFactory {
+class MediaFactory {
   constructor(data, type) {
     if (type == "image") {
-      return new images(data);
+      return new Images(data);
     } else if (type == "video") {
-      return new videos(data);
+      return new Videos(data);
     } else {
       throw "Unknown type format";
     }

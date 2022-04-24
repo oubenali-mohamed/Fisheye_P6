@@ -14,7 +14,7 @@ function displayMedia() {
     if (media.image) {
       let type = "image";
       const mediaContent = document.getElementById("photographeMedia");
-      const mediaModel = new mediaFactory(media, type);
+      const mediaModel = new MediaFactory(media, type);
       const mediaCardDom = mediaModel.getImageCardDOM();
       mediaContent.appendChild(mediaCardDom);
       mediaCardDom.firstChild.addEventListener("click", function (e) {
@@ -25,7 +25,7 @@ function displayMedia() {
     } else {
       let type = "video";
       const mediaContent = document.getElementById("photographeMedia");
-      const videoModel = new mediaFactory(media, type);
+      const videoModel = new MediaFactory(media, type);
       const videoCardDom = videoModel.getVideoCardDOM();
       mediaContent.appendChild(videoCardDom);
       videoCardDom.firstChild.addEventListener("click", function (e) {
